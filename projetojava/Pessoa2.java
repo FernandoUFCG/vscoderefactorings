@@ -42,7 +42,14 @@ public class Pessoa2 {
 		return cpf;
 	}
 	public double getPesoIdeal(){
-		double peso = CalculadoraDePesos2.calculaPesoIdeal(this.altura, this.sexo);
+		double peso = Pessoa2.calculaPesoIdeal(this.altura, this.sexo);
 		return peso;
-	}	
+	}
+    public static double calculaPesoIdeal(double altura, char sexo){
+    	if (sexo == 'M'){
+    		return (72.7*altura) - 58;
+    	} else { //sexo = 'F'
+    		return (62.1*altura) - 44.7;
+    	}
+    }	
 }

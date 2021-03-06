@@ -1,12 +1,5 @@
 import java.util.Scanner;
 public class CalculadoraDePesos2 {
-	public static double calculaPesoIdeal(double altura, char sexo){
-		if (sexo == 'M'){
-			return (72.7*altura) - 58;
-		} else { //sexo = 'F'
-			return (62.1*altura) - 44.7;
-		}
-	}
 	public static String quemEhAMulherMaisMagra(String [] nomes, double [] pesos){
 		String nomeDaMulherMaisMagra = nomes[0];
 		double menorPeso = pesos[0];
@@ -36,7 +29,7 @@ public class CalculadoraDePesos2 {
 				for(int i = 0; i < quant; i++){
 					System.out.println("Qual sua altura?");
 					double altura = Double.parseDouble(leitor.nextLine());
-					double pesoIdeal = calculaPesoIdeal(altura, sexo);
+					double pesoIdeal = Pessoa2.calculaPesoIdeal(altura, sexo);
 					System.out.println("Qual seu peso atual?");
 					double pesoAtual = Double.parseDouble(leitor.nextLine());
 					if (pesoAtual > pesoIdeal){

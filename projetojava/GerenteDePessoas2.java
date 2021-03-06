@@ -7,13 +7,16 @@ public class GerenteDePessoas2 {
 		this.quant = 0;
 	}
 	public Pessoa2 pesquisaPessoa(String cpf){
-		for(int i=0; i < quant; i++){
+		return pessoa(cpf);
+	}
+    private Pessoa2 pessoa(String cpf) {
+        for(int i=0; i < quant; i++){
 			if(this.pessoa[i].getCpf().equals(cpf)){
 				return pessoa[i];
 			}
 		}
 		return null;
-	}
+    }
 	public int pesquisaQuantidadeDePessoasDoSexo(char sexo){
 		int quantSexo =0;
 		for(int i =0; i < quant; i++ ){
@@ -33,7 +36,10 @@ public class GerenteDePessoas2 {
 		return quantPessoa;
 	}
 	public int pesquisaQuantidadeDePessoasAcimaDoPesoIdeal(){
-		int quantpessoaAcimaDoPeso =0;
+		return quantidadeDePessoasAcimaDoPesoIdeal();
+	}
+    private int quantidadeDePessoasAcimaDoPesoIdeal() {
+        int quantpessoaAcimaDoPeso =0;
 		for(int i=0; i<quant; i++){
 			if(this.pessoa[i].getPeso() > pessoa[i].getPesoIdeal()){
 				System.out.println("Você está acima de seu peso ideal");
@@ -41,7 +47,7 @@ public class GerenteDePessoas2 {
 			}
 		}
 		return quantpessoaAcimaDoPeso;
-	}
+    }
 	public Pessoa2 quemEhAPessoaMaisMagra(){
 		for(int i=0; i<quant; i++){
 			if(this.pessoa[i].getPeso() < pessoa[i].getPesoIdeal()){
